@@ -47,6 +47,44 @@
             border-bottom: 3px solid #FFD700 !important;
             font-weight: 700;
         }
+        .qr-web-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+    border: 1px solid #e5e7eb;
+    width: 150px;
+}
+
+.qr-web-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #075985;
+    margin-bottom: 8px;
+}
+
+.qr-placeholder {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 8px;
+    border: 2px dashed #9ca3af;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #9ca3af;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.qr-web-text {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #666;
+}
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col justify-between text-gray-800">
@@ -602,6 +640,18 @@
                 </div>
 
                 <!-- WIDGET 2: TỔNG HỢP DANH HIỆU & THÀNH TÍCH -->
+                <div class="qr-web-card">
+                    <div class="qr-web-title">📱 QUÉT MÃ</div>
+
+                        <div class="qr-placeholder">
+                                                QR
+                                            </div>
+
+                                        <div class="qr-web-text">
+                                        Quét mã để mở<br>
+                                        <strong>Cổng thông tin Tổ dân phố 7</strong>
+                    </div>
+                </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
                     <h3 class="font-bold text-xs text-gov-green uppercase border-b pb-2 mb-3 flex items-center">
                         <i class="fa-solid fa-award mr-2 text-gov-gold"></i> Tổ dân phố Văn hóa
