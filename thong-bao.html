@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết thông báo - Tổ dân phố 7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gov: {
+                            green: '#046A38',
+                            greenDark: '#024724',
+                            red: '#DA251D',
+                            gold: '#FFD700'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        serif: ['Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-800">
+    <header class="bg-gov-red text-white border-b-4 border-gov-gold">
+        <div class="max-w-5xl mx-auto px-4 py-5">
+            <p class="text-xs opacity-90 uppercase font-bold">Cổng thông tin điện tử</p>
+            <h1 class="heading-font text-xl md:text-2xl font-bold mt-1">
+                TỔ DÂN PHỐ 7 - PHƯỜNG PHƯỚC HỘI - TỈNH LÂM ĐỒNG
+            </h1>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+        <button onclick="goBack()"
+                class="inline-flex items-center gap-2 text-sm font-bold text-gov-green hover:text-gov-red mb-5">
+            <i class="fa-solid fa-arrow-left"></i>
+            Quay lại trang trước
+        </button>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+            <!-- THANH TRÁI -->
+            <aside class="lg:col-span-3 space-y-5">
+                <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-gov-green text-white px-4 py-3 flex items-center justify-between">
+                        <h2 class="font-bold text-sm uppercase"><i class="fa-solid fa-bullhorn mr-2"></i>Thông báo mới nhất</h2>
+                    </div>
+                    <div id="latestNoticeList" class="divide-y divide-gray-100">
+                        <div class="p-5 text-center text-xs text-gray-400">Đang tải...</div>
+                    </div>
+                </section>
+
+                <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
+                    <h3 class="font-bold text-sm text-gov-green uppercase border-b pb-3 mb-3">
+                        <i class="fa-solid fa-circle-info mr-2"></i>Thông tin TDP 7
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex gap-3"><i class="fa-solid fa-location-dot text-gov-red mt-1"></i><span>Phường Phước Hội, Tỉnh Lâm Đồng</span></div>
+                        <div class="flex gap-3"><i class="fa-solid fa-people-group text-gov-green mt-1"></i><span>Cộng đồng đoàn kết - nghĩa tình</span></div>
+                        <div class="flex gap-3"><i class="fa-solid fa-envelope text-gov-green mt-1"></i><span>Cổng thông tin điện tử TDP 7</span></div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- NỘI DUNG GIỮA -->
+            <article id="noticeDetail"
+                     class="lg:col-span-6 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-8 text-center text-gray-500">
+                    <i class="fa-solid fa-spinner fa-spin mr-2"></i>
+                    Đang tải thông báo...
+                </div>
+            </article>
+
+            <!-- THANH PHẢI -->
+            <aside class="lg:col-span-3 space-y-5">
+                <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-gov-red text-white px-4 py-3">
+                        <h2 class="font-bold text-sm uppercase"><i class="fa-solid fa-calendar-days mr-2"></i>Sinh hoạt sắp tới</h2>
+                    </div>
+                    <div id="upcomingActivities" class="divide-y divide-gray-100">
+                        <div class="p-5 text-center text-xs text-gray-400">Đang tải...</div>
+                    </div>
+                </section>
+
+                <section class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-gov-green text-white px-4 py-3">
+                        <h2 class="font-bold text-sm uppercase"><i class="fa-solid fa-users mr-2"></i>Ban điều hành</h2>
+                    </div>
+                    <div id="boardList" class="p-4 space-y-3">
+                        <div class="text-center text-xs text-gray-400">Đang tải...</div>
+                    </div>
+                </section>
+
+                <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 text-center">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-red-50 text-gov-red flex items-center justify-center mb-2">
+                        <i class="fa-solid fa-comment-dots text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-gray-800">Phản ánh & Kiến nghị</h3>
+                    <p class="text-xs text-gray-500 mt-1">Đóng góp ý kiến để TDP 7 ngày càng tốt hơn.</p>
+                    <a href="index.html#phan-anh" class="inline-block mt-3 bg-gov-red text-white text-xs font-bold px-4 py-2 rounded-lg hover:opacity-90">Gửi phản ánh</a>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-gov-greenDark text-white mt-10">
+        <div class="max-w-5xl mx-auto px-4 py-6 text-xs text-center text-gray-300">
+            © 2026 Cổng thông tin điện tử Tổ dân phố 7 - Phường Phước Hội, Tỉnh Lâm Đồng.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://cqpgozcxbeyirekcbado.supabase.co';
+        const SUPABASE_PUBLISHABLE_KEY =
+            'sb_publishable_Xsw4C4tVDv3EZbE2yhRqLQ_7K4UWVfc';
+
+        const supabaseClient = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+        function escapeHtml(value) {
+            return String(value ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function goBack() {
+            if (document.referrer) {
+                history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
+        async function loadLatestNotices(currentId) {
+            const box = document.getElementById('latestNoticeList');
+            const { data, error } = await supabaseClient
+                .from('thong_bao')
+                .select('id, title, created_at')
+                .eq('status', 'published')
+                .order('created_at', { ascending: false })
+                .limit(6);
+
+            if (error || !data?.length) {
+                box.innerHTML = '<div class="p-5 text-center text-xs text-gray-400">Chưa có thông báo.</div>';
+                return;
+            }
+
+            box.innerHTML = data.map(item => {
+                const date = item.created_at ? new Date(item.created_at).toLocaleDateString('vi-VN') : '';
+                const active = String(item.id) === String(currentId);
+                return `
+                    <a href="thong-bao.html?id=${item.id}" class="block p-4 ${active ? 'bg-green-50 border-l-4 border-gov-green' : 'hover:bg-gray-50'} transition">
+                        <div class="text-[10px] text-gov-red font-bold mb-1">${date}</div>
+                        <div class="text-sm font-bold text-gray-800 leading-5">${escapeHtml(item.title)}</div>
+                    </a>`;
+            }).join('');
+        }
+
+        async function loadUpcomingActivities() {
+            const box = document.getElementById('upcomingActivities');
+            const { data, error } = await supabaseClient
+                .from('lich_sinh_hoat')
+                .select('thoi_gian, su_kien, dia_diem')
+                .order('thoi_gian', { ascending: true })
+                .limit(5);
+
+            if (error || !data?.length) {
+                box.innerHTML = '<div class="p-5 text-center text-xs text-gray-400">Chưa có lịch sinh hoạt.</div>';
+                return;
+            }
+
+            box.innerHTML = data.map(item => `
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-red-50 text-gov-red flex items-center justify-center shrink-0"><i class="fa-solid fa-calendar-day"></i></div>
+                        <div class="min-w-0">
+                            <div class="text-xs font-bold text-gov-red">${escapeHtml(item.thoi_gian || '')}</div>
+                            <div class="text-sm font-bold text-gray-800 mt-1">${escapeHtml(item.su_kien || '')}</div>
+                            <div class="text-[11px] text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>${escapeHtml(item.dia_diem || '')}</div>
+                        </div>
+                    </div>
+                </div>`).join('');
+        }
+
+        async function loadBoard() {
+            const box = document.getElementById('boardList');
+            const { data, error } = await supabaseClient
+                .from('ban_dieu_hanh')
+                .select('ho_ten, chuc_vu, sdt, hinh_anh')
+                .order('id', { ascending: true })
+                .limit(5);
+
+            if (error || !data?.length) {
+                box.innerHTML = '<div class="text-center text-xs text-gray-400">Chưa có thông tin Ban điều hành.</div>';
+                return;
+            }
+
+            box.innerHTML = data.map(item => `
+                <div class="flex items-center gap-3 border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                    ${item.hinh_anh ? `<img src="${item.hinh_anh}" class="w-11 h-11 rounded-full object-cover border border-gray-200" alt="${escapeHtml(item.ho_ten)}">` : `<div class="w-11 h-11 rounded-full bg-green-50 text-gov-green flex items-center justify-center"><i class="fa-solid fa-user"></i></div>`}
+                    <div class="min-w-0">
+                        <div class="text-sm font-bold text-gray-800">${escapeHtml(item.ho_ten)}</div>
+                        <div class="text-[11px] text-gov-green font-medium">${escapeHtml(item.chuc_vu || '')}</div>
+                        ${item.sdt ? `<div class="text-[11px] text-gray-500"><i class="fa-solid fa-phone mr-1"></i>${escapeHtml(item.sdt)}</div>` : ''}
+                    </div>
+                </div>`).join('');
+        }
+
+        async function loadNoticeDetail() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            const container = document.getElementById('noticeDetail');
+
+            if (!id) {
+                container.innerHTML = `
+                    <div class="p-8 text-center text-red-600">
+                        Không tìm thấy mã thông báo.
+                    </div>
+                `;
+                return;
+            }
+
+            const { data, error } = await supabaseClient
+                .from('thong_bao')
+                .select('id, title, content, image_url, created_at, status')
+                .eq('id', id)
+                .eq('status', 'published')
+                .single();
+
+            if (error || !data) {
+                console.error('Lỗi tải chi tiết thông báo:', error);
+                container.innerHTML = `
+                    <div class="p-8 text-center">
+                        <i class="fa-solid fa-circle-exclamation text-4xl text-red-500 mb-3"></i>
+                        <h2 class="font-bold text-lg text-gray-800">Không tìm thấy thông báo</h2>
+                        <p class="text-sm text-gray-500 mt-2">
+                            Thông báo có thể đã được ẩn hoặc không còn tồn tại.
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            loadLatestNotices(id);
+            loadUpcomingActivities();
+            loadBoard();
+
+            const date = data.created_at
+                ? new Date(data.created_at).toLocaleString('vi-VN')
+                : '';
+
+            const image = data.image_url
+                ? `
+                    <img src="${data.image_url}"
+                         alt="${escapeHtml(data.title)}"
+                         class="w-full max-h-[520px] object-cover">
+                  `
+                : '';
+
+            container.innerHTML = `
+                ${image}
+
+                <div class="p-5 md:p-8">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="bg-gov-red text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            Thông báo
+                        </span>
+                        <span class="text-xs text-gray-500">
+                            <i class="fa-regular fa-calendar mr-1"></i>${date}
+                        </span>
+                    </div>
+
+                    <h2 class="heading-font text-xl md:text-3xl font-bold text-gov-green leading-snug">
+                        ${escapeHtml(data.title)}
+                    </h2>
+
+                    <div class="mt-6 pt-5 border-t border-gray-200 text-sm md:text-base leading-8 text-gray-700 whitespace-pre-line">
+                        ${escapeHtml(data.content)}
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t text-xs text-gray-500 flex items-center gap-2">
+                        <i class="fa-solid fa-user-shield text-gov-green"></i>
+                        Ban điều hành Tổ dân phố 7
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadNoticeDetail);
+    </script>
+</body>
+</html>
